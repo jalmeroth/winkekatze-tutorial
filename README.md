@@ -28,7 +28,7 @@
 - USB-Cable
 
 ## Step-by-step Guide
-1.  Get all [required parts](#required_parts) and familiarize with what you have got there.
+1.  Get all [required parts](#required-parts) and familiarize with what you have got there.
 
     <a href="images/IMG_4740.JPG"><img src="images/IMG_4740.JPG" width="50px" /></a>
     <a href="images/IMG_4741.JPG"><img src="images/IMG_4741.JPG" width="50px" /></a>
