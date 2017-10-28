@@ -8,7 +8,7 @@
 ## Required parts
 
 ### The cat (Maneki Neko)
-- Get a cat from eBay or AliExpress
+- <http://www.ebay.de/usr/toolz-4-you>
 
 ### ESP8266
 - <https://www.itead.cc/esp-12f.html>
