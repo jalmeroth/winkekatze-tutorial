@@ -34,39 +34,43 @@ module cut_side() {
 }
 
 module mothers() {
-    $s=1;
-    $i=3.5;
-    $x=$front_x;
-    $y=4;
-    $z=6;
-    $d=3;
-    $r=$d/2;
+    $ip=3.8;        // inner padding    
+    $ws=1;          // wall size
+    $sz=2.25;       // mother's height
+    $x=$front_x;    // width
+    $y=$sz+2*$ws;   // depth
+    $z=5.5;         // height    
+    $d=3;           // screw's d
+    $r=$d/2;        // screw's r
+
     translate([($base_x-$front_x)/2,$front_y,$base_z])
+
     difference() {
-        color("blue")
         cube([$x,$y,$z]);
-        translate([$s,$s,0])
-        cube([$x-2*$s,$y-2*$s,$z]);
+        translate([$ws,$ws,0])
+        cube([$x-2*$ws,$sz,$z]);
+
         rotate([-90,0,0])
-        translate([$r+$i,-($base_z+$r),0])
+        translate([$r+$ip,-($z-$d),0])
         cylinder(h=$z, d=$d);
+
         rotate([-90,0,0])
-        translate([$front_x-$r-$i,-($base_z+$r),0])
+        translate([$front_x-$r-$ip,-($z-$d),0])
         cylinder(h=$z, d=$d);
     }
 }
 
 module leg($d) {
-    $h=6;
+    $h=6; // 14 kleiner Motor
     difference() {
         cylinder(h=$h, d=$d);
-        cylinder(h=$h, d=$d-2);
+        cylinder(h=$h, d=2);
     }
 }
 
 module terminal() {
-    $b=9;
-    $d=4;
+    $b=8.5;
+    $d=5;
     $r=$d/2;
     translate([$r+$b,$r,$base_z])
     leg($d);
@@ -80,7 +84,7 @@ module terminal() {
 
 $base_x=50;
 $base_y=40;
-$base_z=1;
+$base_z=1.6;
 
 $front_x=20;
 $front_y=15;
